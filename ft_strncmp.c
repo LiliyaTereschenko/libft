@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 17:17:53 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/21 14:58:41 by kkihn            ###   ########.fr       */
+/*   Created: 2018/11/19 19:09:42 by kkihn             #+#    #+#             */
+/*   Updated: 2018/11/21 18:08:45 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *str, const char *to_find)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
-	int		flag;
-	char	*s;
+	size_t i;
 
 	i = 0;
-	s = (char *)str;
-	while (s[i] != '\0')
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2 && i < n)
 	{
-		j = 0;
-		if (s[i] == to_find[j])
-		{
-			flag = i;
-			while (s[i] == to_find[j])
-			{
-				if (to_find[j + 1] == '\0')
-					return (&s[flag]);
-				i++;
-				j++;
-			}
-			i = flag;
-		}
+		s1++;
+		s2++;
 		i++;
 	}
-	return (0);
+	if (i == n)
+		return (0);
+	else
+		return (*s1 - *s2);
 }

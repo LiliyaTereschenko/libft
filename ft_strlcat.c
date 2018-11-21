@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 17:17:53 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/21 14:58:41 by kkihn            ###   ########.fr       */
+/*   Created: 2018/10/23 16:05:52 by kkihn             #+#    #+#             */
+/*   Updated: 2018/11/21 17:02:02 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *str, const char *to_find)
-{
-	int		i;
-	int		j;
-	int		flag;
-	char	*s;
+#include "libft.h"
 
-	i = 0;
-	s = (char *)str;
-	while (s[i] != '\0')
+size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t size)
+{
+	char	*d;
+	char	*s;
+	size_t	n;
+	size_t	destlen;
+
+	d = (char *)dest;
+	s = (char *)src;
+	n = size;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	destlen = d - dest;
+	n = size - destlen;
+	if (n == 0)
+		return (destlen + ft_strlen(s));
+	while (*s != '\0')
 	{
-		j = 0;
-		if (s[i] == to_find[j])
+		if (n != 1)
 		{
-			flag = i;
-			while (s[i] == to_find[j])
-			{
-				if (to_find[j + 1] == '\0')
-					return (&s[flag]);
-				i++;
-				j++;
-			}
-			i = flag;
+			*d++ = *s;
+			n--;
 		}
-		i++;
+		s++;
 	}
-	return (0);
+	*d = '\0';
+	return (destlen + (s - src));
 }

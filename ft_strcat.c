@@ -6,11 +6,11 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:05:52 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/20 18:18:30 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/21 15:49:24 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *restrict dest, char *restrict src)
 {
 	int i;
 	int j;

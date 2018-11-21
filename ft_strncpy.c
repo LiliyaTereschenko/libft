@@ -6,13 +6,15 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 17:06:51 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/20 18:09:40 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/21 15:42:11 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include "libft.h"
+
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	unsigned int i;
+	size_t i;
 
 	i = 0;
 	while (src[i] != '\0' && i < n)

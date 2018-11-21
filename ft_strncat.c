@@ -6,14 +6,16 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 16:32:20 by kkihn             #+#    #+#             */
-/*   Updated: 2018/10/23 16:34:10 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/21 15:53:38 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+#include "libft.h"
+
+char	*ft_strncat(char *restrict dest, char *restrict src, size_t nb)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
