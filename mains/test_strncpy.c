@@ -4,9 +4,9 @@
 int main()
 {
 	char s[100]= "aaaaaaaaaaaaa";
-	char s1[100] = "dsfgfgdfghdfhgfhgh";
+	char s1[100] = "qqqqqqqqqqqqqqqq";
 	char s2[100]= "aaaaaaaaaaaaa";
-	char s3[100] = "dsfgfgdfghdfhgfhgh";
+	char s3[100] = "qqqqqqqqqqqqqqqqq";
 	
 	printf ("%s",ft_strncpy(s, s1, 5));
 	printf ("%c",'\n');

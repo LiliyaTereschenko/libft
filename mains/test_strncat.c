@@ -1,18 +1,16 @@
 #include <stdio.h>
-#include <string.h>
-
-char *ft_strncat(char *dest, char *src, int nb);
+#include "libft.h"
 
 int main()
 {
 	char s1[100] = "LKNBLFJNN";
 	char s2[100] = "";
-	char s3[100] = "khber!@@#!$efp_ijqref'pgi";
+	char s3[100] = "gbhghrghnrg";
 	char s4[100] = "fefefefe";
 
 	char s5[100] = "LKNBLFJNN";
 	char s6[100] = "";
-	char s7[100] = "khber!@@#!$efp_ijqref'pgi";
+	char s7[100] = "gbhghrghnrg";
 	char s8[100] = "fefefefe";
 
 	printf("%s", ft_strncat(s1, s2, 4));

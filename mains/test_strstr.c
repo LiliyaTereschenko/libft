@@ -4,7 +4,7 @@ char *ft_strstr(char *str, char *to_find);
 #include <stdio.h>
 int main()
 {
-    char s[100]= "adhckshcnfhso";
+    char s[100]= "hchckkshchckhso";
     char st[100] = "hck";
     printf ("%s",ft_strstr(s, st));
     printf ("%c",'\n');
