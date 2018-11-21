@@ -6,11 +6,11 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 21:50:59 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/20 19:45:51 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/21 18:23:09 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int res;
 	int negative;
