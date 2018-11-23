@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 19:09:42 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/21 18:08:45 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/23 19:22:30 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (i == n)
 		return (0);
 	else
-		return (*s1 - *s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 }

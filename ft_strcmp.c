@@ -6,9 +6,11 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 19:09:42 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/21 18:01:54 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/23 19:21:44 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
@@ -17,5 +19,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

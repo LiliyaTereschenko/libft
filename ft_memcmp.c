@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/22 17:17:53 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/23 18:58:51 by kkihn            ###   ########.fr       */
+/*   Created: 2018/11/22 12:54:03 by kkihn             #+#    #+#             */
+/*   Updated: 2018/11/23 19:10:45 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ps1;
-	char	*ps2;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
-	if (!*s2)
-		return ((char *)s1);
-	while (*s1 && len > 0)
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	i = 0;
+	while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2 && i < n)
 	{
-		if (*s1 == *s2)
-		{
-			ps1 = (char *)s1 + 1;
-			ps2 = (char *)s2 + 1;
-			while (*ps1 && *ps2 && *ps1 == *ps2 && len > 0)
-			{
-				++ps1;
-				++ps2;
-				len--;
-			}
-			if (!*ps2)
-				return ((char *)s1);
-		}
-		s1++;
-		len--;
+		p1++;
+		p2++;
+		i++;
 	}
-	return (NULL);
+	if (i == n)
+		return (0);
+	else
+		return (*p1 - *p2);
 }

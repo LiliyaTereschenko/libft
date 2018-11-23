@@ -6,35 +6,34 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 17:17:53 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/21 14:58:41 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/23 18:54:53 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *str, const char *to_find)
-{
-	int		i;
-	int		j;
-	int		flag;
-	char	*s;
+#include "libft.h"
 
-	i = 0;
-	s = (char *)str;
-	while (s[i] != '\0')
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	char	*ps1;
+	char	*ps2;
+
+	if (!*s2)
+		return ((char *)s1);
+	while (*s1)
 	{
-		j = 0;
-		if (s[i] == to_find[j])
+		if (*s1 == *s2)
 		{
-			flag = i;
-			while (s[i] == to_find[j])
+			ps1 = (char *)s1 + 1;
+			ps2 = (char *)s2 + 1;
+			while (*ps1 && *ps2 && *ps1 == *ps2)
 			{
-				if (to_find[j + 1] == '\0')
-					return (&s[flag]);
-				i++;
-				j++;
+				++ps1;
+				++ps2;
 			}
-			i = flag;
+			if (!*ps2)
+				return ((char *)s1);
 		}
-		i++;
+		s1++;
 	}
-	return (0);
+	return (NULL);
 }

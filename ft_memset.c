@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 14:11:34 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/20 14:57:19 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/22 11:03:34 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	*ft_memset(void *dest, int c, size_t n)
 {
-	int		i;
 	char	*ptr;
 
-	i = 0;
 	ptr = dest;
 	while (n > 0)
 	{
@@ -25,5 +23,5 @@ void	*ft_memset(void *dest, int c, size_t n)
 		ptr++;
 		n--;
 	}
-	return (ptr);
+	return (dest);
 }
