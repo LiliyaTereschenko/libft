@@ -3,8 +3,8 @@
 
 int main()
 {
-    char s1[100]= "hchckkshchckhso";
-    char s2[100] = "hck";
+    char s1[100]= "test\200";
+    char s2[100] = "test\0";
 	printf ("s1 = %s; s2 = %s\n", s1, s2);
     printf ("%d\n",ft_strcmp(s1, s2));
     printf ("%d\n",strcmp(s1, s2));
@@ -21,8 +21,8 @@ int main()
 	printf ("%d\n",ft_strcmp(s5, s6));
 	printf ("%d\n",strcmp(s5, s6));
 
-	char s9[100]= "1234";
-	char s10[100] = "12";
+	char s9[100]= "12";
+	char s10[100] = "1234";
 	printf ("s1 = %s; s2 = %s\n", s9, s10);
 	printf ("%d\n",ft_strcmp(s9, s10));
 	printf ("%d\n",strcmp(s9, s10));
