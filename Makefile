@@ -6,7 +6,7 @@
 #    By: kkihn <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/29 11:56:12 by kkihn             #+#    #+#              #
-#    Updated: 2018/11/22 14:37:31 by kkihn            ###   ########.fr        #
+#    Updated: 2018/11/26 13:01:58 by kkihn            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,11 @@ SRC = *.c
 
 OFILES = *.o 
 
-all: libft.a
+NAME = libft.a
 
-libft.a:
+all: $(NAME)
+
+$(NAME):
 	gcc -I libft.h  $(FLAGS) $(SRC)
 	ar rc libft.a $(OFILES)	
 

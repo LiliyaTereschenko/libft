@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 10:49:12 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/23 14:38:02 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/27 16:08:35 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_putstr_fd(char const *str, int fd)
 {
-	while (*str)
-	{
-		ft_putchar_fd(*str, fd);
-		str++;
-	}
+	if (str && *str)
+		while (*str)
+		{
+			ft_putchar_fd(*str, fd);
+			str++;
+		}
 }

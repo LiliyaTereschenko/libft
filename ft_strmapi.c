@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 17:12:39 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/22 17:31:32 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/26 16:30:35 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	res = ft_strnew(ft_strlen(s));
+	if (!res)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		res[i] = f(i, s[i]);

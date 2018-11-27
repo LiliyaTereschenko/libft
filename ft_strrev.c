@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/29 13:39:04 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/27 15:53:42 by kkihn            ###   ########.fr       */
+/*   Created: 2018/10/19 21:02:05 by kkihn             #+#    #+#             */
+/*   Updated: 2018/11/27 17:41:21 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	unsigned int i;
+#include "libft.h"
 
-	i = 0;
-	if (s && f)
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
+char	*ft_strrev(char *str)
+{
+	char	i;
+	int		k;
+	int		q;
+
+	q = 0;
+	k = ft_strlen(str);
+	while (q <= k / 2)
+	{
+		i = str[q];
+		str[q] = str[k - q - 1];
+		str[k - q - 1] = i;
+		q++;
+	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:37:04 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/23 12:55:36 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/26 17:00:33 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ char		*ft_itoa(int n)
 	char	*res;
 
 	len = num_count(n) - 1;
-	res = ft_strnew(len + 1);
+	if (!(res = ft_strnew(len + 1)))
+		return (NULL);
 	if (n == -2147483648)
 	{
-		res[len] = '8';
+		res[len--] = '8';
 		n = -214748364;
-		len--;
 	}
 	if (n == 0)
 		res[0] = '0';
