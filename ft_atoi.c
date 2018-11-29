@@ -6,47 +6,37 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 21:50:59 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/26 16:10:13 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/29 14:56:08 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_num(unsigned long long res, int neg, const char *s)
-{
-	int count;
-
-	count = 0;
-	while (*s <= '1' || *s >= '9')
-		s++;
-	while (ft_isdigit(*(s + count)))
-		count++;
-	if (count >= 19)
-		return (neg == -1 ? 0 : -1);
-	if (res > 9223372036854775807)
-		return (neg == -1 ? 0 : -1);
-	else
-		return (res * neg);
-}
-
 int			ft_atoi(const char *s)
 {
-	int					is_neg;
-	unsigned long long	n;
+	int				neg;
+	int				i;
+	long long int	num;
+	long long int	temp;
 
-	is_neg = 1;
-	n = 0;
-	while (*s == ' ' || *s == '\t' || *s == '\r' || *s == '\v' ||
-			*s == '\f' || *s == '\n')
-		s++;
-	if (*s == '+')
-		s++;
-	else if (*s == '-')
+	neg = 0;
+	i = 0;
+	num = 0;
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\r' || s[i] == '\v' ||
+			s[i] == '\f' || s[i] == '\n')
+		i++;
+	if (s[i] == '-')
+		neg = 1;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		is_neg = -1;
-		s++;
+		temp = num;
+		num *= 10;
+		if (num < temp)
+			return (neg == 1 ? 0 : -1);
+		num += ((int)s[i] - '0');
+		i++;
 	}
-	while (*s && ft_isdigit(*s))
-		n = n * 10 + (*s++ - '0');
-	return (get_num(n, is_neg, s));
+	return (neg == 1 ? -num : num);
 }
