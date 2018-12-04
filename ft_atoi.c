@@ -6,7 +6,7 @@
 /*   By: kkihn <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 21:50:59 by kkihn             #+#    #+#             */
-/*   Updated: 2018/11/29 14:56:08 by kkihn            ###   ########.fr       */
+/*   Updated: 2018/11/29 16:28:22 by kkihn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int			ft_atoi(const char *s)
 	{
 		temp = num;
 		num *= 10;
+		num += ((int)s[i] - '0');
 		if (num < temp)
 			return (neg == 1 ? 0 : -1);
-		num += ((int)s[i] - '0');
 		i++;
 	}
 	return (neg == 1 ? -num : num);
